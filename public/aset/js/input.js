@@ -3,8 +3,8 @@ let tableSiswa = $('#tableSiswa').DataTable({
     ajax: '/api/siswa',
     columns: [
         { data: 'name' },
-        { data: 'rank' },
-        { data: 'nrp' },
+        { data: 'NOSIS' },
+        { data: 'PLETON' },
         {
             data: function (data) {
                 let button = `<button type="button" onclick="editSiswa(${data.id}, '${data.name}')" class="btn btn-warning"><i class="fa fa-edit"></i></button>`

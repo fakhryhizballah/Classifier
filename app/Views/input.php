@@ -1,6 +1,6 @@
 <?= $this->extend('layouts/index'); ?>
 <?= $this->section('layout'); ?>
-    <div class="container overflow-hidden">
+<div class="container overflow-hidden">
     <!-- Content here -->
     <div class="row">
         <div class="col">
@@ -23,12 +23,12 @@
 
                         </div>
                         <div class="mb-3">
-                            <label for="rank" class="form-label">Pangkat</label>
-                            <input type="text" class="form-control" id="rank" name="rank" value="<?= old('rank') ?>" required>
+                            <label for="NOSIS" class="form-label">NOSIS</label>
+                            <input type="text" class="form-control" id="NOSIS" name="NOSIS" value="<?= old('NOSIS') ?>" required>
                         </div>
                         <div class="mb-3">
-                            <label for="nrp" class="form-label">NRP</label>
-                            <input type="text" class="form-control" id="nrp" name="nrp" value="<?= old('nrp') ?>" required>
+                            <label for="PLETON" class="form-label">PLETON</label>
+                            <input type="text" class="form-control" id="PLETON" name="PLETON" value="<?= old('PLETON') ?>" required>
                         </div>
                         <button type="submit" class="btn btn-primary">Submit</button>
                     </form>
@@ -40,8 +40,8 @@
                 <thead>
                     <tr>
                         <th scope="col">Nama</th>
-                        <th scope="col">Pangkat</th>
-                        <th scope="col">NRP</th>
+                        <th scope="col">NOSIS</th>
+                        <th scope="col">PLETON</th>
                         <th scope="col">Action</th>
                     </tr>
                 </thead>

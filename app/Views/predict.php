@@ -35,5 +35,5 @@
 <?= $this->section('script'); ?>
 <script src="https://cdn.datatables.net/2.1.0/js/dataTables.min.js"></script>
 <script src="/aset/js/predict.js"></script>
-<script src="/aset/js/train.js"></script>
+<script src="/aset/js/training.js"></script>
 <?= $this->endSection('script'); ?>

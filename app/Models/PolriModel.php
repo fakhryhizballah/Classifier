@@ -15,8 +15,9 @@ class PolriModel extends Model
     protected $allowedFields    = [
         'id',
         'name',
-        'rank',
-        'nrp',];
+        'NOSIS',
+        'PLETON',
+    ];
 
     protected bool $allowEmptyInserts = false;
     protected bool $updateOnlyChanged = true;

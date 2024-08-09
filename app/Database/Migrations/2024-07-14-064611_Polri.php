@@ -19,11 +19,11 @@ class Polri extends Migration
 				'type'           => 'VARCHAR',
 				'constraint'     => '225',
 			],
-			'rank'       => [
+			'NOSIS'       => [
 				'type'           => 'VARCHAR',
 				'constraint'     => '255',
 			],
-			'nrp'      	=> [
+			'PLETON'      	=> [
 				'type'           => 'VARCHAR',
 				'constraint'     => '255',
 			],

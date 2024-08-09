@@ -40,15 +40,15 @@ class Ajax extends ResourceController
         $request = $this->request->getPost();
         $data = [
             'name' => $this->request->getPost('name'),
-            'rank' => $this->request->getPost('rank'),
-            'nrp' => $this->request->getPost('nrp'),
+            'NOSIS' => $this->request->getPost('NOSIS'),
+            'PLETON' => $this->request->getPost('PLETON'),
         ];
 
         // Validasi data (opsional)
         if (!$this->validate([
             'name' => 'required|min_length[2]',
-            'rank' => 'required|min_length[2]',
-            'nrp' => 'required|min_length[2]'
+            'NOSIS' => 'required|min_length[2]',
+            'PLETON' => 'required|min_length[2]'
         ])) {
             return redirect()->back()->withInput()->with('errors', $this->validator->getErrors());
         }
@@ -59,7 +59,7 @@ class Ajax extends ResourceController
             'status' => '200',
             'data' => $request
         ];
-        return redirect()->to('/');
+        return redirect()->back();
     }
     public function getSiswa()
     {

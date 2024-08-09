@@ -1,6 +1,6 @@
 function train(id) {
     $.ajax({
-        url: '/api/train/'+id,
+        url: '/api/train/' + id,
         method: 'GET',
         success: function (data) {
             console.log(data);
