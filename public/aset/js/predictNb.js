@@ -19,7 +19,7 @@ let tableSiswa = $('#tablePredict').DataTable({
                 if (data.nb_hasil == null || data.nb_hasil == "") {
                     return 'Not trained';
                 } else {
-                    return data.label;
+                    return data.nb_hasil;
                 }
             }
         },
