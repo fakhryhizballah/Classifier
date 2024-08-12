@@ -19,24 +19,24 @@
                     <form action="/api/label" method="POST">
                         <div class="mb-3">
                             <label for="MORAL" class="form-label">MORAL</label>
-                            <input type="number" class="form-control" id="MORAL" name="MORAL" value="<?= old('MORAL') ?>" min="1" max="5" required>
+                            <input type="number" class="form-control" id="MORAL" name="MORAL" value="<?= old('MORAL') ?>" step="0.1" min="0.1" max="5" required>
 
                         </div>
                         <div class="mb-3">
                             <label for="PENAMPILAN" class="form-label">PENAMPILAN</label>
-                            <input type="number" class="form-control" id="PENAMPILAN" name="PENAMPILAN" value="<?= old('PENAMPILAN') ?>" min="1" max="5" required>
+                            <input type="number" class="form-control" id="PENAMPILAN" name="PENAMPILAN" value="<?= old('PENAMPILAN') ?>" step="0.1" min="0.1" max="5" required>
                         </div>
                         <div class="mb-3">
                             <label for="KEPEMIMPINAN" class="form-label">KEPEMIMPINAN</label>
-                            <input type="number" class="form-control" id="KEPEMIMPINAN" name="KEPEMIMPINAN" value="<?= old('KEPEMIMPINAN') ?>" min="1" max="5" required>
+                            <input type="number" class="form-control" id="KEPEMIMPINAN" name="KEPEMIMPINAN" value="<?= old('KEPEMIMPINAN') ?>" step="0.1" min="0.1" max="5" required>
                         </div>
                         <div class="mb-3">
                             <label for="DISIPLIN" class="form-label">DISIPLIN</label>
-                            <input type="number" class="form-control" id="DISIPLIN" name="DISIPLIN" value="<?= old('DISIPLIN') ?>" min="1" max="5" required>
+                            <input type="number" class="form-control" id="DISIPLIN" name="DISIPLIN" value="<?= old('DISIPLIN') ?>" step="0.1" min="0.1" max="5" required>
                         </div>
                         <div class="mb-3">
                             <label for="PENGENDALIAN" class="form-label">PENGENDALIAN DIRI</label>
-                            <input type="number" class="form-control" id="PENGENDALIAN" name="PENGENDALIAN" value="<?= old('PENGENDALIAN') ?>" min="1" max="5" required>
+                            <input type="number" class="form-control" id="PENGENDALIAN" name="PENGENDALIAN" value="<?= old('PENGENDALIAN') ?>" step="0.1" min="0.1" max="5" required>
                         </div>
                         <div class="mb-3">
                             <label for="LABEL" class="form-label">LABEL</label>

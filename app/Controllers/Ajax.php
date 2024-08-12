@@ -11,6 +11,7 @@ use App\Models\PolriModel;
 use App\Models\LabelModel;
 use App\Models\NilaiModel;
 use App\Models\SampelModel;
+use App\Models\HasilModel;
 
 
 class Ajax extends ResourceController
@@ -19,12 +20,14 @@ class Ajax extends ResourceController
     protected $polriModel;
     protected $nilaiModel;
     protected $sampelModel;
+    protected $hasilModel;
     public function __construct()
     {
         $this->polriModel = new polriModel();
         $this->labelModel = new labelModel();
         $this->nilaiModel = new nilaiModel();
         $this->sampelModel = new sampelModel();
+        $this->hasilModel = new HasilModel();
     }
     public function index()
     {
@@ -226,6 +229,15 @@ class Ajax extends ResourceController
         foreach ($dataSiswa as $s) {
             $predicted = $classifier->predict([$s['moral'], $s['penampilan'], $s['kepemimpinan'], $s['disiplin'], $s['pengendalian']]);
             $this->nilaiModel->update($s['id_nilai'], ['label' => $predicted]);
+            $hasil = $this->hasilModel->where('id_polri', $s['id_polri'])->find();
+            if (!$hasil) {
+                $this->hasilModel->save([
+                    'id_polri' => $s['id_polri'],
+                    'dt' => $predicted
+                ]);
+            } else {
+                $this->hasilModel->update($s['id_polri'], ['dt' => $predicted]);
+            }
         }
         $response = [
             'status' => '200',
@@ -248,10 +260,28 @@ class Ajax extends ResourceController
         foreach ($dataSiswa as $s) {
             $predicted = $classifier->predict([$s['moral'], $s['penampilan'], $s['kepemimpinan'], $s['disiplin'], $s['pengendalian']]);
             $this->nilaiModel->update($s['id_nilai'], ['label' => $predicted]);
+            $hasil = $this->hasilModel->where('id_polri', $s['id_polri'])->find();
+            if (!$hasil) {
+                $this->hasilModel->save([
+                    'id_polri' => $s['id_polri'],
+                    'nb' => $predicted
+                ]);
+            } else {
+                $this->hasilModel->update($s['id_polri'], ['nb' => $predicted]);
+            }
         }
         $response = [
             'status' => '200',
             'data' => $classifier
+        ];
+        return $this->respond($response, 200);
+    }
+    public function comparison()
+    {
+        $dataSiswa = $this->hasilModel->getNilaiWithPolri();
+        $response = [
+            'status' => '200',
+            'data' => $dataSiswa
         ];
         return $this->respond($response, 200);
     }

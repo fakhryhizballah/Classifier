@@ -16,24 +16,19 @@ class Label extends Migration
                 'auto_increment' => TRUE
             ],
             'moral'       => [
-                'type'           => 'INT',
-                'constraint'     => '11'
+                'type'           => 'DOUBLE',
             ],
             'penampilan'       => [
-                'type'           => 'INT',
-                'constraint'     => '11'
+                'type'           => 'DOUBLE',
             ],
             'kepemimpinan'       => [
-                'type'           => 'INT',
-                'constraint'     => '11'
+                'type'           => 'DOUBLE',
             ],
             'disiplin'       => [
-                'type'           => 'INT',
-                'constraint'     => '11'
+                'type'           => 'DOUBLE',
             ],
             'pengendalian'       => [
-                'type'           => 'INT',
-                'constraint'     => '11'
+                'type'           => 'DOUBLE',
             ],
             'label'       => [
                 'type'           => 'VARCHAR',

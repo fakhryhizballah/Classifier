@@ -4,7 +4,7 @@ namespace App\Database\Migrations;
 
 use CodeIgniter\Database\Migration;
 
-class Sampel extends Migration
+class Label extends Migration
 {
     public function up()
     {
@@ -15,22 +15,20 @@ class Sampel extends Migration
                 'unsigned'       => TRUE,
                 'auto_increment' => TRUE
             ],
-            'moral'       => [
-                'type'           => 'DOUBLE'
+            'id_polri'       => [
+                'type'           => 'INT',
+                'constraint'     => '11',
+                'unique'         => TRUE,
+                'unsigned'       => true,
+                'null'           => true,
+
+
             ],
-            'penampilan'       => [
-                'type'           => 'DOUBLE'
+            'dt'       => [
+                'type'           => 'VARCHAR',
+                'constraint'     => '255'
             ],
-            'kepemimpinan'       => [
-                'type'           => 'DOUBLE'
-            ],
-            'disiplin'       => [
-                'type'           => 'DOUBLE'
-            ],
-            'pengendalian'       => [
-                'type'           => 'DOUBLE'
-            ],
-            'label'       => [
+            'nb'       => [
                 'type'           => 'VARCHAR',
                 'constraint'     => '255'
             ],
@@ -44,12 +42,12 @@ class Sampel extends Migration
             ],
         ]);
         $this->forge->addKey('id', TRUE);
-        $this->forge->createTable('samples');
+        $this->forge->createTable('hasils');
     }
 
     public function down()
     {
         //
-        $this->forge->dropTable('samples');
+        $this->forge->dropTable('hasils');
     }
 }

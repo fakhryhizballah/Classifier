@@ -61,23 +61,23 @@
                     <input type="hidden" name="id_polri" id="id_polri">
                     <div class="mb-3">
                         <label for="moral" class="form-label">Nilai Moral</label>
-                        <input type="number" min="1" max="5" class="form-control" id="moral" name="moral" value="<?= old('moral') ?>" required>
+                        <input type="number" step="0.1" min="0.1" max="5" class="form-control" id="moral" name="moral" value="<?= old('moral') ?>" required>
                     </div>
                     <div class="mb-3">
                         <label for="penampilan" class="form-label">Nilai Penamilan</label>
-                        <input type="number" min="1" max="5" class="form-control" id="penampilan" name="penampilan" value="<?= old('penampilan') ?>" required>
+                        <input type="number" step="0.1" min="0.1" max="5" class="form-control" id="penampilan" name="penampilan" value="<?= old('penampilan') ?>" required>
                     </div>
                     <div class="mb-3">
                         <label for="kepemimpinan" class="form-label">Nilai Kepemimpinan</label>
-                        <input type="number" min="1" max="5" class="form-control" id="kepemimpinan" name="kepemimpinan" value="<?= old('kepemimpinan') ?>" required>
+                        <input type="number" step="0.1" min="0.1" max="5" class="form-control" id="kepemimpinan" name="kepemimpinan" value="<?= old('kepemimpinan') ?>" required>
                     </div>
                     <div class="mb-3">
                         <label for="disiplin" class="form-label">Nilai Disiplin</label>
-                        <input type="number" min="1" max="5" class="form-control" id="disiplin" name="disiplin" value="<?= old('kepemimpinan') ?>" required>
+                        <input type="number" step="0.1" min="0.1" max="5" class="form-control" id="disiplin" name="disiplin" value="<?= old('kepemimpinan') ?>" required>
                     </div>
                     <div class="mb-3">
                         <label for="pengendalian" class="form-label">Nilai Pengendalian Diri</label>
-                        <input type="number" min="1" max="5" class="form-control" id="pengendalian" name="pengendalian" value="<?= old('kepemimpinan') ?>" required>
+                        <input type="number" step="0.1" min="0.1" max="5" class="form-control" id="pengendalian" name="pengendalian" value="<?= old('kepemimpinan') ?>" required>
                     </div>
                 </div>
                 <div class="modal-footer">

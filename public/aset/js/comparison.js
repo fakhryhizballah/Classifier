@@ -1,6 +1,6 @@
 
-let tableSiswa = $('#tablePredict').DataTable({
-    ajax: '/api/nilai',
+let tableSiswa = $('#tableComparison').DataTable({
+    ajax: '/api/comparison',
     columns: [
         {
             data: null,
@@ -9,17 +9,23 @@ let tableSiswa = $('#tablePredict').DataTable({
             }
         },
         { data: 'name' },
-        { data: 'moral' },
-        { data: 'penampilan' },
-        { data: 'kepemimpinan' },
-        { data: 'disiplin' },
-        { data: 'pengendalian' },
+        { data: 'NOSIS' },
+        { data: 'PLETON' },
         {
             data: function (data) {
-                if (data.dt_hasil == null) {
+                if (data.dt == null || data.dt == "") {
                     return 'Not trained';
                 } else {
-                    return data.label;
+                    return data.dt;
+                }
+            }
+        },
+        {
+            data: function (data) {
+                if (data.nb == null || data.nb == "") {
+                    return 'Not trained';
+                } else {
+                    return data.nb;
                 }
             }
         },

@@ -5,6 +5,24 @@ function train(id) {
         success: function (data) {
             console.log(data);
             tableSiswa.ajax.reload();
+            Swal.fire({
+                position: "center",
+                icon: "success",
+                title: "Training Success",
+                showConfirmButton: false,
+                timer: 1500
+            });
+        },
+        error: function (data) {
+            console.log(data);
+            tableSiswa.ajax.reload();
+            Swal.fire({
+                position: "center",
+                icon: "error",
+                title: "Training Failed",
+                showConfirmButton: false,
+                timer: 1500
+            });
         }
     })
     // $.ajax({

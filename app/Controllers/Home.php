@@ -40,5 +40,12 @@ class Home extends BaseController
         ];
         return view('predictNb', $data);
     }
+    public function comparison(): string
+    {
+        $data = [
+            'title' => 'Prediksi Naive Bayes | SPN Polda Kalbar',
+        ];
+        return view('comparison', $data);
+    }
 
 }

@@ -3,24 +3,21 @@
 <div class="container overflow-hidden">
     <div class="card">
         <div class="card-body">
-            <h5 class="card-title">Native Bayes</h5>
-            <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-            <table class="table table-bordered" id="tablePredict">
+            <h5 class="card-title">Comparison</h5>
+            <p class="card-text">Perbadningan</p>
+            <table class="table table-bordered" id="tableComparison">
                 <thead>
                     <tr>
                         <th scope="col">#</th>
                         <th scope="col">NAMA</th>
-                        <th scope="col">MORAL</th>
-                        <th scope="col">PENAMPILAN</th>
-                        <th scope="col">KEPEMIMPINAN</th>
-                        <th scope="col">DISIPLIN</th>
-                        <th scope="col">PENGENDALIAN DIRI</th>
-                        <th scope="col">LABEL</th>
+                        <th scope="col">NOSIS</th>
+                        <th scope="col">PLETON</th>
+                        <th scope="col">Native Bayes</th>
+                        <th scope="col">Decision Tree</th>
                     </tr>
                 </thead>
             </table>
         </div>
-        <div class="card-footer bg-transparent text-end"><button id="Train" name="Train" onclick="train('nb')" class="btn btn-primary">Train/Test</button></div>
 
     </div>
 </div>
@@ -34,6 +31,5 @@
 
 <?= $this->section('script'); ?>
 <script src="https://cdn.datatables.net/2.1.0/js/dataTables.min.js"></script>
-<script src="/aset/js/predictNb.js"></script>
-<script src="/aset/js/training.js"></script>
+<script src="/aset/js/comparison.js"></script>
 <?= $this->endSection('script'); ?>

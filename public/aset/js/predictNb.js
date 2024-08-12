@@ -16,7 +16,7 @@ let tableSiswa = $('#tablePredict').DataTable({
         { data: 'pengendalian' },
         {
             data: function (data) {
-                if (data.dt_hasil == null) {
+                if (data.nb_hasil == null || data.nb_hasil == "") {
                     return 'Not trained';
                 } else {
                     return data.label;

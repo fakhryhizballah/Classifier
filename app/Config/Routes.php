@@ -10,6 +10,7 @@ $routes->get('/sampel', 'Home::inputData');
 $routes->get('/home', 'Decision::index');
 $routes->get('/predict/dt', 'Home::predict');
 $routes->get('/predict/nb', 'Home::predictNb');
+$routes->get('/comparison', 'Home::comparison');
 
 $routes->get('/api', 'Ajax::index');
 $routes->post('/api/siswa', 'Ajax::postSiswa');
@@ -30,4 +31,5 @@ $routes->delete('/api/sampel/(:num)', 'Ajax::deleteSampel/$1');
 
 $routes->get('/api/train/dtree', 'Ajax::getPredictDt');
 $routes->get('/api/train/nb', 'Ajax::getPredictNb');
+$routes->get('/api/comparison', 'Ajax::comparison');
 $routes->get('/api/test', 'Ajax::getTest');
