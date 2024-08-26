@@ -12,13 +12,29 @@
                         <th scope="col">NAMA</th>
                         <th scope="col">NOSIS</th>
                         <th scope="col">PLETON</th>
-                        <th scope="col">Native Bayes</th>
-                        <th scope="col">Decision Tree</th>
+                        <th scope="col">NATIVE BAYES</th>
+                        <th scope="col">DECISION TREE</th>
+                        <th scope="col">LABEL AKTUAL</th>
                     </tr>
                 </thead>
             </table>
         </div>
-
+    </div>
+    <div class="card">
+        <div class="card-body">
+            <h5 class="card-title">Akurasi</h5>
+            <p class="card-text">Perhitungan Akurasi</p>
+            <table class="table table-bordered" id="tableAkurasi">
+                <thead>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Data Testing</th>
+                        <th scope="col">Tingkat Akurasi DT</th>
+                        <th scope="col">Tingkat Akurasi NBC</th>
+                    </tr>
+                </thead>
+            </table>
+        </div>
     </div>
 </div>
 

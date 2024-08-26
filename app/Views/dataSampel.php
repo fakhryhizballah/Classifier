@@ -41,8 +41,8 @@
                         <div class="mb-3">
                             <label for="LABEL" class="form-label">LABEL</label>
                             <select class="form-select" aria-label="LABEL" name="LABEL" id="LABEL" required>
-                                <option value="Tidak berprestasi">Tidak berprestasi</option>
-                                <option value="Berprestasi">Berprestasi</option>
+                                <option value="TIDAK BERPRESTASI">TIDAK BERPRESTASI</option>
+                                <option value="BERPRESTASI">BERPRESTASI</option>
                             </select>
                         </div>
                         <button type="submit" class="btn btn-primary">Submit</button>
@@ -106,8 +106,8 @@
                         <div class="mb-3">
                             <label for="LABEL" class="form-label">LABEL</label>
                             <select class="form-select" aria-label="LABEL" name="Sampel_LABEL" id="Sampel_LABEL" required>
-                                <option value="Tidak berprestasi">Tidak berprestasi</option>
-                                <option value="Berprestasi">Berprestasi</option>
+                                <option value="TIDAK BERPRESTASI">TIDAK BERPRESTASI</option>
+                                <option value="BERPRESTASI">BERPRESTASI</option>
                             </select>
                         </div>
                         <button type="submit" class="btn btn-primary">Submit</button>

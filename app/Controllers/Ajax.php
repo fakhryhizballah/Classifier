@@ -12,7 +12,7 @@ use App\Models\LabelModel;
 use App\Models\NilaiModel;
 use App\Models\SampelModel;
 use App\Models\HasilModel;
-
+use App\Libraries\TreeNode;
 
 class Ajax extends ResourceController
 {
@@ -21,6 +21,7 @@ class Ajax extends ResourceController
     protected $nilaiModel;
     protected $sampelModel;
     protected $hasilModel;
+    protected $treeNode;
     public function __construct()
     {
         $this->polriModel = new polriModel();
@@ -28,6 +29,7 @@ class Ajax extends ResourceController
         $this->nilaiModel = new nilaiModel();
         $this->sampelModel = new sampelModel();
         $this->hasilModel = new HasilModel();
+        $this->treeNode = new TreeNode();
     }
     public function index()
     {
@@ -228,7 +230,6 @@ class Ajax extends ResourceController
         $dataSiswa = $this->nilaiModel->getNilaiWithPolri();
         foreach ($dataSiswa as $s) {
             $predicted = $classifier->predict([$s['moral'], $s['penampilan'], $s['kepemimpinan'], $s['disiplin'], $s['pengendalian']]);
-            $this->nilaiModel->update($s['id_nilai'], ['label' => $predicted]);
             $hasil = $this->hasilModel->where('id_polri', $s['id_polri'])->find();
             if (!$hasil) {
                 $this->hasilModel->save([
@@ -259,7 +260,6 @@ class Ajax extends ResourceController
         $dataSiswa = $this->nilaiModel->getNilaiWithPolri();
         foreach ($dataSiswa as $s) {
             $predicted = $classifier->predict([$s['moral'], $s['penampilan'], $s['kepemimpinan'], $s['disiplin'], $s['pengendalian']]);
-            $this->nilaiModel->update($s['id_nilai'], ['label' => $predicted]);
             $hasil = $this->hasilModel->where('id_polri', $s['id_polri'])->find();
             if (!$hasil) {
                 $this->hasilModel->save([
@@ -295,27 +295,17 @@ class Ajax extends ResourceController
             $labels[] = $s['label'];
         }
         $classifierDt = new DecisionTree();
-        $classifierNb = new NaiveBayes();
         $classifierDt->train($samples, $labels);
-        $classifierNb->train($samples, $labels);
-        $dataTest = $this->sampelModel->findAll();
-        $testLabels = [];
-        $predictedLabelsDt = [];
-        $predictedLabelsNb = [];
-        foreach ($dataTest as $t) {
-            $testLabels[] = $t['label'];
-            $predictedLabelsDt[] = $classifierDt->predict([$t['moral'], $t['penampilan'], $t['kepemimpinan'], $t['disiplin'], $t['pengendalian']]);
-            $predictedLabelsNb[] = $classifierNb->predict([$t['moral'], $t['penampilan'], $t['kepemimpinan'], $t['disiplin'], $t['pengendalian']]);
-        }
-        $accuracyDt = Accuracy::score($testLabels, $predictedLabelsDt);
-        $accuracyNb = Accuracy::score($testLabels, $predictedLabelsNb);
-       // dd($predictedLabels, $testLabels, $accuracy);
+        // Menyimpan model ke file
+        $modelManager = new ModelManager();
+        $modelManager->saveToFile($classifierDt, 'tree-model.phpml');
+        $root = $this->treeNode->calculateBestThreshold($samples, $labels, 2);
+       // dd($root);
 
         $response = [
             'status' => '200',
-            'data' => ['DecisionTree' => $accuracyDt, 'NaiveBayes' => $accuracyNb]
+            'data' => $root
         ];
         return $this->respond($response, 200);
     }
-
 }

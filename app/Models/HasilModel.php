@@ -35,8 +35,9 @@ class HasilModel extends Model
     public function getNilaiWithPolri($id = false)
     {
         if ($id === false) {
-            return $this->select('hasils.id as id_nilai, hasils.*, polris.*')
+            return $this->select('hasils.id as id_nilai, nilais.label as label, hasils.*, polris.*')
                 ->join('polris', 'hasils.id_polri = polris.id')
+                ->join('nilais', 'nilais.id_polri = hasils.id_polri`')
                 ->findAll();
         }
 

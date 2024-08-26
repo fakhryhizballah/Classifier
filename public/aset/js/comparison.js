@@ -29,6 +29,7 @@ let tableSiswa = $('#tableComparison').DataTable({
                 }
             }
         },
+        { data: 'label' }x``
     ],
     "scrollX": true,
     "scrollY": "50vh",
