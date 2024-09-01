@@ -310,13 +310,6 @@ class Ajax extends ResourceController
                 $groupNb = [];
             }
         }
-        //  $accuracy = Accuracy::score($testLabels, $dt);
-        //  dd($accuracy);
-        //   foreach ($testLabels as $x) {
-        //     dd($x);
-        //    $accuracy = Accuracy::score($groupLabel, $x);
-        //   array_push($groupLabel, $accuracy);
-        // }
         $result = [];
         for ($i = 0; $i < count($testLabels); $i++) {
             $index = ($i * 10 + 1) . '-' . ($i * 10 + 10);
