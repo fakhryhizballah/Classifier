@@ -285,6 +285,65 @@ class Ajax extends ResourceController
         ];
         return $this->respond($response, 200);
     }
+    public function akurasi()
+    {
+        $dataSiswa = $this->hasilModel->getNilaiWithPolri();
+        // dd($dataSiswa);
+        $testLabels = [];
+        $groupLabel = [];
+        $dt = [];
+        $groupDt = [];
+        $nb = [];
+        $groupNb = [];
+        $z = 0;
+        foreach ($dataSiswa as $x) {
+            $z++;
+            array_push($groupLabel, $x['label']);
+            array_push($groupDt, $x['dt']);
+            array_push($groupNb, $x['nb']);
+            if (($z) % 10 == 0) {
+                $testLabels[] = $groupLabel;
+                $groupLabel = [];
+                $dt[] = $groupDt;
+                $groupDt = [];
+                $nb[] = $groupNb;
+                $groupNb = [];
+            }
+        }
+        //  $accuracy = Accuracy::score($testLabels, $dt);
+        //  dd($accuracy);
+        //   foreach ($testLabels as $x) {
+        //     dd($x);
+        //    $accuracy = Accuracy::score($groupLabel, $x);
+        //   array_push($groupLabel, $accuracy);
+        // }
+        $result = [];
+        for ($i = 0; $i < count($testLabels); $i++) {
+            $index = ($i * 10 + 1) . '-' . ($i * 10 + 10);
+            $result[$i] = [
+                'index' => $index,
+                'dt' =>  Accuracy::score($testLabels[$i], $dt[$i]),
+                'nb' => Accuracy::score($testLabels[$i], $nb[$i])
+            ];
+        }
+        if (count($groupLabel) > 0) {
+            $testLabels[] = $groupLabel;
+            $dt[] = $groupDt;
+            $nb[] = $groupNb;
+            $index = ((count($testLabels) - 1) * 10 + 1) . '-' . (count($testLabels) - 1) * 10  + count($groupLabel);
+            $result[] = [
+                'index' => $index,
+                'dt' => Accuracy::score($testLabels[count($testLabels) - 1], $dt[count($dt) - 1]),
+                'nb' => Accuracy::score($testLabels[count($testLabels) - 1], $nb[count($nb) - 1])
+            ];
+        }
+
+        $response = [
+            'status' => '200',
+            'data' => $result
+        ];
+        return $this->respond($response, 200);
+    }
     public function getTest()
     {
         $dataSample = $this->labelModel->findAll();

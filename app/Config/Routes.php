@@ -32,4 +32,5 @@ $routes->delete('/api/sampel/(:num)', 'Ajax::deleteSampel/$1');
 $routes->get('/api/train/dtree', 'Ajax::getPredictDt');
 $routes->get('/api/train/nb', 'Ajax::getPredictNb');
 $routes->get('/api/comparison', 'Ajax::comparison');
+$routes->get('/api/akurasi', 'Ajax::akurasi');
 $routes->get('/api/test', 'Ajax::getTest');

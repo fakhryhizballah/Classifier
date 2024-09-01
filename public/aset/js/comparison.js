@@ -5,7 +5,7 @@ let tableSiswa = $('#tableComparison').DataTable({
         {
             data: null,
             render: function (data, type, row, meta) {
-                return meta.row + meta.settings._iDisplayStart + 1;
+                return meta.row + 1;
             }
         },
         { data: 'name' },
@@ -29,7 +29,7 @@ let tableSiswa = $('#tableComparison').DataTable({
                 }
             }
         },
-        { data: 'label' }x``
+        { data: 'label' }
     ],
     "scrollX": true,
     "scrollY": "50vh",
@@ -38,3 +38,33 @@ let tableSiswa = $('#tableComparison').DataTable({
     "responsive": true,
     "bAutoWidth": false,
 });
+let tableAkurasi = $('#tableAkurasi').DataTable({
+    ajax: '/api/akurasi',
+    columns: [
+        {
+            data: null,
+            render: function (data, type, row, meta) {
+                return meta.row + 1;
+            }
+        },
+        { data: 'index' },
+        {
+            data: 'dt',
+            render: function (data, type, row, meta) {
+                return (data * 100).toFixed(0) + '%';
+            }
+        },
+        {
+            data: 'nb',
+            render: function (data, type, row, meta) {
+                return (data * 100).toFixed(0) + '%';
+            }
+        }
+    ],
+    "scrollX": true,
+    "scrollY": "50vh",
+    "scrollCollapse": true,
+    "paging": true,
+    "responsive": true,
+    "bAutoWidth": false,
+})
