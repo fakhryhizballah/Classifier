@@ -1,7 +1,7 @@
 <?= $this->extend('layouts/index'); ?>
 <?= $this->section('layout'); ?>
 <div class="container overflow-hidden">
-    <div class="card">
+    <div class="card mt-2">
         <div class="card-body">
             <h5 class="card-title">Comparison</h5>
             <p class="card-text">Perbadningan</p>
@@ -20,7 +20,7 @@
             </table>
         </div>
     </div>
-    <div class="card">
+    <div class="card mt-2">
         <div class="card-body">
             <h5 class="card-title">Akurasi</h5>
             <p class="card-text">Perhitungan Akurasi</p>

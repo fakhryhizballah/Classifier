@@ -288,7 +288,6 @@ class Ajax extends ResourceController
     public function akurasi()
     {
         $dataSiswa = $this->hasilModel->getNilaiWithPolri();
-        // dd($dataSiswa);
         $testLabels = [];
         $groupLabel = [];
         $dt = [];

@@ -39,6 +39,7 @@ function editSiswa(id, name) {
             $('#kepemimpinan').val(data.kepemimpinan);
             $('#disiplin').val(data.disiplin);
             $('#pengendalian').val(data.pengendalian);
+            $('#label').val(data.label); 
         }
         ,
         error: function (err) {
@@ -48,6 +49,7 @@ function editSiswa(id, name) {
                 $('#kepemimpinan').val(null);
                 $('#disiplin').val(null);
                 $('#pengendalian').val(null);
+                $('#label').val(null);
             }
         }
     })
