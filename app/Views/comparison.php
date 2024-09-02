@@ -4,7 +4,7 @@
     <div class="card mt-2">
         <div class="card-body">
             <h5 class="card-title">Comparison</h5>
-            <p class="card-text">Perbadningan</p>
+            <p class="card-text">Perbandingan</p>
             <table class="table table-bordered" id="tableComparison">
                 <thead>
                     <tr>
