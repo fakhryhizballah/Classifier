@@ -48,7 +48,31 @@
             </div>
         </div>
     </div>
-</div>
+    <div class="card mt-2">
+        <div class="card-body text-center">
+            <h5 class="card-title">Root Tree</h5>
+            <ul class="tree">
+                <li><span>Apakah ada nilai Mental Kepribadian Siswa ≥ 4,5</span>
+                    <ul>
+                        <li><span>TIDAK BERPRESTASI</span>
+
+                        </li>
+                        <li><span>Apakah terdapat minimal 2 nilai yang ≥ 4,5</span>
+                            <ul>
+                                <li><span>TIDAK BERPRESTASI</span>
+
+                                </li>
+                                <li><span>BERPRESTASI</span>
+
+                                </li>
+                            </ul>
+                        </li>
+
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
 </div>
 
 <?= $this->endSection('layout'); ?>
@@ -57,6 +81,7 @@
 <link rel=" stylesheet" href="https://cdn.datatables.net/2.1.0/css/dataTables.dataTables.min.css" />
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" />
 <link rel="stylesheet" href="/aset/css/tree.css" />
+<link rel="stylesheet" href="/aset/css/tree2.css" />
 <?= $this->endSection('css'); ?>
 
 <?= $this->section('script'); ?>
