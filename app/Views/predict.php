@@ -23,7 +23,7 @@
         <div class="card-footer bg-transparent text-end"><button id="Train" name="Train" onclick="train('dtree')" class="btn btn-primary">Train/Test</button></div>
     </div>
     <div class="card mt-2">
-        <h5 class="card-title text-center">Native Bayes</h5>
+        <h5 class="card-title text-center">Naive Bayes</h5>
         <div class="card-body">
             <div id="wrapper">
                 <span class="label">

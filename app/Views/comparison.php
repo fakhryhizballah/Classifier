@@ -12,7 +12,7 @@
                         <th scope="col">NAMA</th>
                         <th scope="col">NOSIS</th>
                         <th scope="col">PLETON</th>
-                        <th scope="col">NATIVE BAYES</th>
+                        <th scope="col">NAIVE BAYES</th>
                         <th scope="col">DECISION TREE</th>
                         <th scope="col">LABEL AKTUAL</th>
                     </tr>

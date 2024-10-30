@@ -3,7 +3,7 @@
 <div class="container overflow-hidden">
     <div class="card">
         <div class="card-body">
-            <h5 class="card-title">Native Bayes</h5>
+            <h5 class="card-title">Naive Bayes</h5>
             <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
             <table class="table table-bordered" id="tablePredict">
                 <thead>
